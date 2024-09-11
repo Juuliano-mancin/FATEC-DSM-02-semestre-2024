@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Frete</title>
+</head>
+<body>
+    <h1>Calculadora de Frete</h1>
+    <form action="ex18.php" method="post">
+        <label>Peso do pacote (kg):</label>
+        <input type="number" name="peso" required><br><br>
+        
+        <label>Destino:</label>
+        <select id="destino" name="destino" required>
+            <option value="nacional">Nacional</option>
+            <option value="internacional">Internacional</option>
+        </select><br><br>
+        
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
