@@ -1,0 +1,223 @@
+Exercícios de Programação Orientada a Objetos (POO) com Temas de Videogame
+
+Exercício 1: Classe "Mario" - Super Mario World
+
+Objetivo: Criar uma classe Mario que representa o personagem principal do jogo "Super Mario World".
+
+Tarefas:
+
+Definir a Classe Mario:
+Atributos:
+vida (pontos de vida)
+moedas (número de moedas coletadas)
+poder (poder atual, como "Super Mario" ou "Fire Mario")
+Métodos:
+pular() - Exibe uma mensagem indicando que Mario pulou.
+coletarMoeda() - Aumenta o número de moedas e exibe uma mensagem.
+usarPoder(poderNovo) - Altera o poder de Mario e exibe uma mensagem.
+Exercício 2: Classe "Inimigo" - Dark Souls
+
+Objetivo: Criar uma classe Inimigo para representar inimigos no jogo "Dark Souls".
+
+Tarefas:
+
+Definir a Classe Inimigo:
+Atributos:
+vida (pontos de vida do inimigo)
+ataque (poder de ataque do inimigo)
+defesa (poder de defesa do inimigo)
+Métodos:
+atacar(jogador) - Diminui a vida do jogador com base no ataque do inimigo e exibe uma mensagem.
+receberDano(dano) - Reduz a vida do inimigo com base no dano recebido e exibe uma mensagem.
+defender() - Aumenta a defesa do inimigo e exibe uma mensagem.
+Exercício 3: Classe "Veículo" - Mario Kart
+
+Objetivo: Criar uma classe Veículo para representar veículos no jogo "Mario Kart".
+
+Tarefas:
+
+Definir a Classe Veículo:
+Atributos:
+velocidade (velocidade atual do veículo)
+combustível (quantidade de combustível disponível)
+tipo (tipo de veículo, como "Kart" ou "Moto")
+Métodos:
+acelerar() - Aumenta a velocidade do veículo e exibe uma mensagem.
+frear() - Diminui a velocidade do veículo e exibe uma mensagem.
+reabastecer(combustívelAdicional) - Aumenta a quantidade de combustível e exibe uma mensagem.
+Exercício 4: Classe "Arma" - The Legend of Zelda
+
+Objetivo: Criar uma classe Arma para representar armas no jogo "The Legend of Zelda".
+
+Tarefas:
+
+Definir a Classe Arma:
+Atributos:
+dano (poder de ataque da arma)
+durabilidade (quanto a arma pode ser usada antes de quebrar)
+tipo (tipo de arma, como "Espada" ou "Arco")
+Métodos:
+usar() - Reduz a durabilidade da arma com base no uso e exibe uma mensagem.
+reparar() - Aumenta a durabilidade da arma e exibe uma mensagem.
+mostrarTipo() - Exibe o tipo da arma.
+Exercício 5: Classe "Quest" - Skyrim
+
+Objetivo: Criar uma classe Quest para representar missões no jogo "Skyrim".
+
+Tarefas:
+
+Definir a Classe Quest:
+Atributos:
+nome (nome da missão)
+dificuldade (nível de dificuldade da missão)
+status (status da missão, como "Não Iniciada", "Em Progresso", ou "Completa")
+Métodos:
+iniciar() - Altera o status da missão para "Em Progresso" e exibe uma mensagem.
+concluir() - Altera o status da missão para "Completa" e exibe uma mensagem.
+mostrarStatus() - Exibe o status atual da missão.
+
+
+|| Gabarito ||
+
+Exercício 1: Classe "Mario"
+
+java
+Copy code
+// Definindo a classe Mario
+public class Mario {
+    // Atributos da classe Mario
+    int vida;
+    int moedas;
+    String poder;
+
+    // Método para Mario pular
+    public void pular() {
+        System.out.println("Mario pulou!");
+    }
+
+    // Método para coletar uma moeda
+    public void coletarMoeda() {
+        moedas++; // Aumenta o número de moedas
+        System.out.println("Moeda coletada! Total de moedas: " + moedas);
+    }
+
+    // Método para usar um novo poder
+    public void usarPoder(String poderNovo) {
+        poder = poderNovo; // Atualiza o poder de Mario
+        System.out.println("Mario agora é: " + poder);
+    }
+}
+Exercício 2: Classe "Inimigo"
+
+java
+Copy code
+// Definindo a classe Inimigo
+public class Inimigo {
+    // Atributos da classe Inimigo
+    int vida;
+    int ataque;
+    int defesa;
+
+    // Método para atacar o jogador
+    public void atacar(Jogador jogador) {
+        jogador.vida -= ataque; // Diminui a vida do jogador com base no ataque do inimigo
+        System.out.println("Inimigo atacou o jogador com " + ataque + " de dano!");
+    }
+
+    // Método para receber dano
+    public void receberDano(int dano) {
+        vida -= dano; // Reduz a vida do inimigo com base no dano recebido
+        System.out.println("Inimigo recebeu " + dano + " de dano. Vida restante: " + vida);
+    }
+
+    // Método para defender
+    public void defender() {
+        defesa += 10; // Aumenta a defesa do inimigo
+        System.out.println("Defesa do inimigo aumentada para " + defesa);
+    }
+}
+Exercício 3: Classe "Veículo"
+
+java
+Copy code
+// Definindo a classe Veículo
+public class Veiculo {
+    // Atributos da classe Veículo
+    int velocidade;
+    int combustível;
+    String tipo;
+
+    // Método para acelerar o veículo
+    public void acelerar() {
+        velocidade += 10; // Aumenta a velocidade do veículo
+        System.out.println("Veículo acelerou para " + velocidade + " km/h");
+    }
+
+    // Método para frear o veículo
+    public void frear() {
+        velocidade -= 10; // Diminui a velocidade do veículo
+        System.out.println("Veículo freou para " + velocidade + " km/h");
+    }
+
+    // Método para reabastecer o veículo
+    public void reabastecer(int combustívelAdicional) {
+        combustível += combustívelAdicional; // Aumenta a quantidade de combustível
+        System.out.println("Veículo reabastecido com " + combustívelAdicional + " litros. Combustível total: " + combustível);
+    }
+}
+Exercício 4: Classe "Arma"
+
+java
+Copy code
+// Definindo a classe Arma
+public class Arma {
+    // Atributos da classe Arma
+    int dano;
+    int durabilidade;
+    String tipo;
+
+    // Método para usar a arma
+    public void usar() {
+        durabilidade--; // Reduz a durabilidade da arma
+        System.out.println("Arma usada. Durabilidade restante: " + durabilidade);
+    }
+
+    // Método para reparar a arma
+    public void reparar() {
+        durabilidade += 10; // Aumenta a durabilidade da arma
+        System.out.println("Arma reparada. Durabilidade total: " + durabilidade);
+    }
+
+    // Método para mostrar o tipo da arma
+    public void mostrarTipo() {
+        System.out.println("Tipo da arma: " + tipo);
+    }
+}
+Exercício 5: Classe "Quest"
+
+java
+Copy code
+// Definindo a classe Quest
+public class Quest {
+    // Atributos da classe Quest
+    String nome;
+    int dificuldade;
+    String status;
+
+    // Método para iniciar a missão
+    public void iniciar() {
+        status = "Em Progresso"; // Altera o status para "Em Progresso"
+        System.out.println("Missão iniciada: " + nome);
+    }
+
+    // Método para concluir a missão
+    public void concluir() {
+        status = "Completa"; // Altera o status para "Completa"
+        System.out.println("Missão concluída: " + nome);
+    }
+
+    // Método para mostrar o status da missão
+    public void mostrarStatus() {
+        System.out.println("Status da missão " + nome + ": " + status);
+    }
+}
