@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Titulos';
+    src: url('Fonts/Audiowide-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubTitulos';
+    src: url('Fonts/Rajdhani-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Textos';
+    src: url('Fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('img/Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:20px
+}
+
+.header {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: row; /* Organiza os elementos em uma linha */
+    justify-content: space-between; /* Espaço entre os itens do header */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    width: 100%;
+    padding: 20px;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    background-color: rgba(150, 150, 150); /* Fundo com opacidade */
+    color: rgba(126, 38, 38);
+    box-shadow: 0 0 5px rgb(173, 216, 230),
+                0 0 10px rgb(173, 216, 230),
+                0 0 15px rgb(173, 216, 230);
+    
+}
+
+.nova-div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 5px solid #3d3d3d;
+    border-radius: 5px;
+    background-color: #969696;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    background-color: #969696;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+.div1, .div2 {
+    padding: 10px;
+    margin: 10px;
+    flex: 1;
+    background-color: #909090;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+.form-label {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+
+.div2 {
+    width: 100%;
+    height: 530px;
+    background-image: url('img/ImgDiv2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+
+.btn-roxo {
+    background-color: rgba(126, 38, 38);
+    color: rgb(255, 255, 255);
+    border: thin solid rgba(126, 38, 38);
+}
+
+.btn-roxo:hover {
+    background-color: rgb(167, 53, 53);
+}
+
+.date-time {
+    margin-top: 10px; /* Espaçamento acima da data/hora */
+    font-size: 16px; /* Tamanho da fonte */
+    color: rgba(126, 38, 38);
+    font-family: 'SubTitulos', sans-serif; /* Aplica a fonte personalizada */
+}
+
+h3{
+    color: rgba(126, 38, 38);
+
+}
+
+.content {
+    text-align: center;
+}
