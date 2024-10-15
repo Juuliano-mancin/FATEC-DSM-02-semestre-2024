@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros</title>
+    <style>
+        body {
+            margin: 0; /* Remove margens do body */
+            background: linear-gradient(to bottom, #2c003e, #000000); /* Gradiente de fundo escuro roxo e preto */
+            color: white; /* Cor do texto em branco para melhor legibilidade */
+        }
+        header {
+            width: 100%;
+            height: 300px; /* Altura do header */
+            position: relative; /* Necessário para posicionar as imagens */
+            overflow: hidden; /* Esconde partes que saem da área do header */
+        }
+        header img {
+            width: 100%; /* A imagem ocupa 100% da largura do header */
+            height: 100%; /* A imagem ocupa 100% da altura */
+            object-fit: fill; /* Cobre toda a área, distorcendo se necessário */
+            position: absolute; /* Posiciona imagens uma em cima da outra */
+            top: 0;
+            left: 0;
+            opacity: 0; /* Inicialmente invisível */
+            transition: opacity 1s ease-in-out; /* Transição suave para opacidade */
+        }
+        header img.active {
+            opacity: 1; /* Torna a imagem ativa visível */
+        }
+        h1 {
+            position: absolute; /* Posiciona o título sobre as imagens */
+            color: white;
+            text-align: center;
+            width: 100%;
+            bottom: 20px; /* Distância do fundo */
+        }
+        main {
+            padding: 20px; /* Espaçamento interno */
+        }
+        .image-container {
+            display: flex; /* Alinha as imagens em linha */
+            justify-content: space-between; /* Espaço igual entre as imagens */
+        }
+        .image-container img {
+            width: 32%; /* Cada imagem ocupa 32% da largura do contêiner */
+            height: 100%; /* Altura automática para manter a proporção */
+            aspect-ratio: 1 / 1; /* Mantém as imagens quadradas */
+            object-fit: cover; /* Cobre a área do contêiner */
+            border: 2px solid transparent; /* Contorno transparente para efeito de neon */
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Sombra azul */
+            transition: box-shadow 0.3s ease-in-out; /* Transição suave para a sombra */
+        }
+        .image-container img:nth-child(1) {
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Sombra azul */
+        }
+        .image-container img:nth-child(2) {
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); /* Sombra roxa */
+        }
+        .image-container img:nth-child(3) {
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Sombra azul */
+        }
+        footer {
+            height: 200px; /* Altura do footer */
+            padding: 0; /* Remove espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo do footer com transparência */
+            display: flex; /* Para alinhar as imagens em linha */
+            justify-content: space-between;
+        }
+        footer img {
+            width: 30%; /* Cada imagem ocupa 30% da largura do footer */
+            height: 100%; /* A imagem ocupa 100% da altura do footer */
+            object-fit: fill; /* Cobre toda a área, distorcendo se necessário */
+            margin: 0 5px; /* Espaçamento entre as imagens */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/parceiros/Header (1).jpg" alt="Descrição da imagem 1" class="active">
+        <img src="img/parceiros/Header (2).jpg" alt="Descrição da imagem 2">
+        <img src="img/parceiros/Header (3).jpg" alt="Descrição da imagem 3">
+    </header>
+
+    <main>
+        <div class="image-container" id="imageContainer">
+            <img src="img/parceiros/Quadrado (1).jpg" alt="Imagem 1">
+            <img src="img/parceiros/Quadrado (2).jpg" alt="Imagem 2">
+            <img src="img/parceiros/Quadrado (3).jpg" alt="Imagem 3">
+        </div>
+    </main>
+
+    <footer>
+        <img src="img/parceiros/Footer (2).jpg" alt="Descrição da imagem 4">
+        <img src="img/parceiros/Footer (1).jpg" alt="Descrição da imagem 5">
+        <img src="img/parceiros/Footer (3).jpg" alt="Descrição da imagem 6">
+    </footer>
+
+    <script>
+        const headerImages = document.querySelectorAll('header img');
+        let currentHeaderIndex = 0;
+
+        function showNextHeaderImage() {
+            // Remove a classe 'active' da imagem atual
+            headerImages[currentHeaderIndex].classList.remove('active');
+            // Atualiza o índice da imagem atual
+            currentHeaderIndex = (currentHeaderIndex + 1) % headerImages.length; // Faz o loop de volta ao início
+            // Adiciona a classe 'active' à próxima imagem
+            headerImages[currentHeaderIndex].classList.add('active');
+        }
+
+        const allImages = [
+            'img/parceiros/Quadrado (1).jpg',
+            'img/parceiros/Quadrado (2).jpg',
+            'img/parceiros/Quadrado (3).jpg',
+            'img/parceiros/Quadrado (4).jpg',
+            'img/parceiros/Quadrado (5).jpg',
+            'img/parceiros/Quadrado (6).jpg',
+            'img/parceiros/Quadrado (7).jpg'
+        ];
+
+        function getRandomImages() {
+            const shuffledImages = allImages.sort(() => 0.5 - Math.random()); // Embaralha as imagens
+            return shuffledImages.slice(0, 3); // Retorna as 3 primeiras imagens
+        }
+
+        function updateMainImages() {
+            const randomImages = getRandomImages(); // Obtém imagens aleatórias
+            const images = document.querySelectorAll('#imageContainer img'); // Seleciona as imagens no container
+
+            // Atualiza a src das imagens no container
+            images.forEach((img, index) => {
+                img.src = randomImages[index];
+                img.alt = `Imagem ${index + 1}`; // Atualiza a descrição da imagem
+            });
+        }
+
+        // Muda a imagem do header a cada 2 segundos
+        setInterval(showNextHeaderImage, 2000);
+        // Atualiza as imagens do main a cada 5 segundos
+        setInterval(updateMainImages, 5000);
+
+        // Atualiza as imagens do main ao carregar
+        updateMainImages();
+    </script>
+</body>
+</html>
